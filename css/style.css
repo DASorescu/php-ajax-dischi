@@ -1,0 +1,35 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+}
+
+header {
+
+    height: 7vh;
+    padding-left: 20px;
+    background-color: #2F3A46;
+
+}
+
+.logo {
+    width: 3%;
+    margin-left: 20px;
+}
+
+
+main {
+    color: #fff;
+    background-color: #1E2D3B;
+    height: 93vh;
+}
+
+main .column {
+    width: calc(100% / 5 - 40px);
+    margin: 10px 20px;
+    background-color: #2F3A46;
+}

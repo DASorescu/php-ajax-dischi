@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.css' integrity='sha512-h1rwF0uB6r2IuEZcyjPrR53bBKN9Wb4yL+w3Rdlzmc3CkBF1gMSFvQIIstnu4bEtYDaKca5ke5S8UBAACRImyg==' crossorigin='anonymous'/>
+</head>
+<body>
+    <main>
+        <section class="albums h-100 container d-flex align-items-center ">
+            <div v-if="discs.length === 10" class="discs-list row gy-3 gx-2">
+                <div class="column p-4 " v-for="(disc, i) in filteredDiscs" :key="i">
+                    <div class="disc-card d-flex flex-column">
+                        <figure>
+                            <img :src="image" :alt="title" class="img-fluid">
+                        </figure>
+                        <div class="text-center">
+                            <h3 class="album-name mb-4">{{ title }}</h3>
+                            <p class="author m-0">{{ author }}</p>
+                            <p class="release-date m-0">{{ year }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-else class="charging">
+                <h3>Loading...</h3>
+                <div class="fa-3x fa-spin ">
+                    <font-awesome-icon icon="fa-solid fa-compact-disc" />
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
