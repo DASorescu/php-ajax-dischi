@@ -4,36 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css"/>
-    
+    <title>Dischi-With-own-api</title>
+    <!-- bootstrap -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.css' integrity='sha512-h1rwF0uB6r2IuEZcyjPrR53bBKN9Wb4yL+w3Rdlzmc3CkBF1gMSFvQIIstnu4bEtYDaKca5ke5S8UBAACRImyg==' crossorigin='anonymous'/>
+    <!-- local style -->
+    <link rel="stylesheet" href="../css/style.css" type="text/css"/>
+    <!-- fontawesome -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css' integrity='sha512-HHsOC+h3najWR7OKiGZtfhFIEzg5VRIPde0kB0bG2QRidTQqf+sbfcxCTB16AcFB93xMjnBIKE29/MjdzXE+qw==' crossorigin='anonymous'/>
+    <!-- VUEJs -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- axios -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.js' integrity='sha512-rozBdNtS7jw9BlC76YF1FQGjz17qQ0J/Vu9ZCFIW374sEy4EZRbRcUZa2RU/MZ90X2mnLU56F75VfdToGV0RiA==' crossorigin='anonymous'></script>
+    <!-- //local script -->
+    <script src="./js/script.js" defer></script>
 </head>
 <body>
-    <main>
-        <section class="albums h-100 container d-flex align-items-center ">
-            <div v-if="discs.length === 10" class="discs-list row gy-3 gx-2">
-                <div class="column p-4 " v-for="(disc, i) in filteredDiscs" :key="i">
-                    <div class="disc-card d-flex flex-column">
-                        <figure>
-                            <img :src="image" :alt="title" class="img-fluid">
-                        </figure>
-                        <div class="text-center">
-                            <h3 class="album-name mb-4">{{ title }}</h3>
-                            <p class="author m-0">{{ author }}</p>
-                            <p class="release-date m-0">{{ year }}</p>
+    <div id="root">
+        <header class="d-flex align-items-center justify-content-between">
+            <figure class=" h-100 m-0 d-flex justify-content-center align-items-center logo">
+                <img src="../assets/logo.png" alt="Music" class="img-fluid">
+            </figure>
+        </header>
+        <main>
+            <section class="albums h-100 container d-flex align-items-center ">
+                <div v-if="discs.length === 10" class="discs-list row gy-3 gx-2">
+                    <div class="column p-4 " v-for="(disc, i) in discs" :key="i">
+                        <div class="disc-card d-flex flex-column">
+                            <figure>
+                                <img :src="disc.poster" :alt="disc.title" class="img-fluid">
+                            </figure>
+                            <div class="text-center">
+                                <h3 class="album-name mb-4">{{ disc.title }}</h3>
+                                <p class="author m-0">{{ disc.author }}</p>
+                                <p class="release-date m-0">{{ disc.year }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div v-else class="charging">
-                <h3>Loading...</h3>
-                <div class="fa-3x fa-spin ">
-                    <font-awesome-icon icon="fa-solid fa-compact-disc" />
+                <div v-else class="charging">
+                    <h3>Loading...</h3>
+                    <div class="fa-3x fa-spin ">
+                        <i icon="fa-solid fa-compact-disc"></i>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
+
 
