@@ -91,7 +91,7 @@ $discs = [
 <body>
 <header class="d-flex align-items-center justify-content-between">
         <figure class=" h-100 m-0 d-flex justify-content-center align-items-center logo">
-            <img src="./assets/logo.png" alt="Music" class="img-fluid">
+            <img src="../assets/logo.png" alt="Music" class="img-fluid">
         </figure>
 </header>
 <main>

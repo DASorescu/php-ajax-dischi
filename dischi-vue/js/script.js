@@ -7,7 +7,7 @@ const app = new Vue({
         generi: [],
     },
     mounted() {
-        axios.get('http://localhost/api/discs/discs.php').then(res => {
+        axios.get('../api/api.discs').then(res => {
             this.discs = res.data
             for (let disc of this.discs) {
                 if (!this.generi.includes(disc.genre)) {
