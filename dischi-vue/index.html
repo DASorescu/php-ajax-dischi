@@ -24,6 +24,12 @@
             <figure class=" h-100 m-0 d-flex justify-content-center align-items-center logo">
                 <img src="../assets/logo.png" alt="Music" class="img-fluid">
             </figure>
+            <div class="my-select">
+                <select class="form-select" aria-label="Default select example" v-model="selectedOption" >
+                    <option selected >{{ placeholder || 'Select an option' }}</option>
+                    <option v-for="(genere, index) in generi" :key="index" :value="genere">{{ genere }}</option>
+                </select>
+            </div>
         </header>
         <main>
             <section class="albums h-100 container d-flex align-items-center ">

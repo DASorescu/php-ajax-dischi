@@ -1,27 +1,35 @@
+/* Reset */
 * {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
 }
 
+/* Generics */
 body {
     font-family: "DM Sans", sans-serif;
 }
 
+/* //header */
 header {
 
     height: 7vh;
-    padding-left: 20px;
+    padding: 0 20px;
     background-color: #2F3A46;
 
 }
 
 .logo {
     width: 3%;
-    margin-left: 20px;
+
 }
 
+.my-select {
+    margin-right: 20px;
+    width: 10%;
+}
 
+/* ?body */
 main {
     color: #fff;
     background-color: #1E2D3B;
